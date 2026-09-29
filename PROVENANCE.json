@@ -1,0 +1,83 @@
+{
+  "package": "obix-binding-zig",
+  "dir": "binding/obix-binding-zig",
+  "importedBy": "scripts/recovery/import-packages.mjs",
+  "snapshot": "snap-20260924T142414Z",
+  "stage": "stage-2 lift-and-shift (base owner; later stages repair/merge)",
+  "sources": [
+    {
+      "label": "upstream:obix-binding-zig@f78d2b3",
+      "repo": "obix-binding-zig",
+      "url": "https://github.com/obinexusmk2/obix-binding-zig",
+      "sha": "f78d2b3a27e70fdf4496eeba4696a13ca80b2ba3",
+      "path": ".",
+      "license": "MIT",
+      "licenseFileUpstream": true,
+      "filesImported": 20,
+      "filesExcluded": 28
+    }
+  ],
+  "originalManifest": {
+    "name": "@obinexusltd/obix-binding-zig",
+    "version": "0.1.2",
+    "license": "MIT",
+    "bin": null,
+    "scripts": {
+      "build": "tsc",
+      "test": "vitest run"
+    }
+  },
+  "transforms": [
+    "package.json regenerated (lockstep version, exact internal pins, exports with \"types\" first, standard scripts)",
+    "tsconfig.json generated (NodeNext via tsconfig.base.json)",
+    "internal specifiers renamed: none",
+    "relative imports given \".js\"/\"/index.js\" extensions: 0"
+  ],
+  "localFixes": [
+    {
+      "stage": "stage-7",
+      "files": [
+        "package.json"
+      ],
+      "why": "Stage 7 (tarball inspection): __tests__ removed from the files allow-list (tests must not ship)"
+    }
+  ],
+  "scopeScrub": {
+    "rule": "scripts/recovery/scrub-rules.mjs (brief: no other OBINexus projects)",
+    "replacementsPerFile": {
+      "README.md": 4,
+      "docs/01-overview.md": 1,
+      "docs/02-installation-and-setup.md": 1,
+      "docs/03-binding-lifecycle.md": 2,
+      "src/index.ts": 2
+    }
+  },
+  "authoredOverlay": [],
+  "excluded": [
+    "dist/**",
+    "node_modules/**",
+    "lockfiles",
+    "tsconfig*.json (regenerated)",
+    ".gitignore",
+    ".github/**",
+    "coverage/**"
+  ],
+  "unresolvedRelativeImports": [],
+  "note": null,
+  "renamedFrom": [
+    {
+      "name": "@obinexusltd/obix-binding-zig",
+      "dir": "binding/obix-binding-zig",
+      "stage": "unscoped-naming",
+      "why": "D-102 (2026-09-29): OBIX packages are named without an npm scope — previous name @obinexusltd/obix-binding-zig, current name obix-binding-zig (docs/recovery/unscoped-migration.md); the directory, version and exports are unchanged"
+    }
+  ],
+  "export": {
+    "from": "https://github.com/obinexusmk2/obix-monorepo",
+    "branch": "recovery/obix-api-preserving-rebuild",
+    "commit": "69cafc94910c1add865a520877617ac307668875",
+    "directory": "binding/obix-binding-zig",
+    "exportedBy": "scripts/release/export-repos.mjs",
+    "note": "a clean initial commit of this package; the monorepo history is not imported (D-103). Local machine paths in this record are replaced by <local workspace>."
+  }
+}
