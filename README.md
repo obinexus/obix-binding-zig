@@ -162,8 +162,6 @@ MIT
 npm install obix-binding-zig
 ```
 
-> **Not yet on npm.** The OBIX packages are prepared for publication and are published only on the owner's authorisation; until then this is the command the published package will answer to.
-
 ## API surface
 
 - `obix-binding-zig` — 6 value exports: `createArenaAllocator`, `createComptimeCache`, `createFFITransport`, `createSchemaResolver`, `createZigBinding`, `normalizeFunctionIdentifier`
@@ -182,8 +180,9 @@ The architecture of OBIX — the package families and which packages are public 
 
 ## Testing
 
-- 5 test files ship in the npm package (`__tests__/`): they are the evidence of the package's contract, published so that its verification can be read — not runtime code (no entry point reaches them).
-- Run them with `npm test` (`vitest run`) in the OBIX monorepo, which provides the test tooling (Node's test runner, Vitest, TypeScript).
+- 5 test files ship in the npm package (`__tests__/`): the evidence of the package's contract, published so that its verification can be inspected — not runtime code (no entry point reaches them).
+- **Standalone**: 5 of 5 — they read nothing outside the package.
+- Run them with `npm test` (`vitest run`) in the OBIX monorepo, which provides the test tooling (Node's test runner, Vitest, TypeScript) and the harness.
 
 ## Documentation
 
@@ -201,7 +200,7 @@ The architecture of OBIX — the package families and which packages are public 
 
 - https://github.com/obinexus/obix-binding-zig — `git@github.com:obinexus/obix-binding-zig.git`
 - Issues: https://github.com/obinexus/obix-binding-zig/issues
-- The repository is a clean export of the package from the OBIX monorepo; its lineage (the monorepo commit it was exported from, the sources it was recovered from, earlier names) is in `PROVENANCE.json`.
+- The repository is a clean export of the package from the OBIX monorepo. Its lineage — the sources it was recovered from and its earlier names — is `PROVENANCE.json`, shipped in this package; the repository's copy also records the monorepo commit it was exported from.
 
 ## License
 
